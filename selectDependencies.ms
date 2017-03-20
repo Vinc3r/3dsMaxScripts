@@ -1,7 +1,7 @@
 /*
 		
 	Description :
-		This script apply a box mapping with the same value on lenght, width and height.
+		Easy select reference objects.
 
 	Installation :
 		Copy the .ms file on 3dsmax_folder\scripts
