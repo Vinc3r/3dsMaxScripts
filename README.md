@@ -22,15 +22,17 @@ When you want lock an object like a camera, you must check each box on the hiera
 One-click-apply a box mapping with the same value on lenght, width and height.
 
 ### [selectDependencies](https://github.com/Vinc3r/3dsMaxScripts/blob/master/selectDependencies.ms)
-Easy select reference objects
+Easy select reference objects.
 
 ### [weld](https://github.com/Vinc3r/3dsMaxScripts/blob/master/weld.ms)
-One-click weld at a default value of 0.001
+One-click weld at a default value of 0,001.
 
 ## Useless scripts since some 3dsMax updates
 
 ### [isolateSelection](https://github.com/Vinc3r/3dsMaxScripts/blob/master/isolateSelection.ms)
+*useless since 3dsMax 2013*
 Show the Isolate Selection dialog on the top-left rather than smack-dab in the middle of the viewport. Replace original Isolate Selection in menus and shortcuts.
 
 ### [removeBgdImg](https://github.com/Vinc3r/3dsMaxScripts/blob/master/removeBgdImg.ms)
+*useless since 3dsMax 2013*
 Allow to easily remove a background image assigned to the viewport (alt +b key) (by default in 3dsMax, you can only check/unchek "display background").
