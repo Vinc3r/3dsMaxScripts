@@ -20,7 +20,8 @@ macroScript geometryFix
 	ButtonText:"Geometry fix"
 
 (
-	Fix_One
+	FixAll
+	FixAllBut
 	PivotZero
 	Msg = stringStream "empty\n"
 	try(destroyDialog ::FixRoll)catch()
@@ -29,16 +30,26 @@ macroScript geometryFix
 	rollout FixRoll "Geometry Fix"
 	(
 		button btnReset "Reset Selection" pos:[2,2] width:120 height:30
-		button btnPivot0 "Pivot [0,0,0]" pos:[2,34] width:120 height:20
-		edittext edt1 "" pos:[0,57] width:120 height:20
+		button btnReset2 "Reset * but pivot" pos:[2,34] width:120 height:30
+		button btnPivot0 "Pivot [0,0,0]" pos:[2,64] width:120 height:20
+		edittext edt1 "" pos:[0,87] width:120 height:20
 
 		on btnReset pressed do
 		(
 			free Msg
-			for o in selection do Fix_one(o)
+			for o in selection do FixAll(o)
 			format "% Objet(s) Normalisé(s)\n" selection.count to:Msg
 			FixRoll.edt1.text = Msg as string
 		)
+		
+		on btnReset2 pressed do
+		(
+			free Msg
+			for o in selection do FixAllBut(o)
+			format "% Objet(s) Normalisé(s)\n" selection.count to:Msg
+			FixRoll.edt1.text = Msg as string
+		)
+		
 		on btnPivot0 pressed do
 		(
 			free Msg
@@ -46,18 +57,27 @@ macroScript geometryFix
 			format "Pivot(s) on [0,0,0]\n" to:Msg
 			FixRoll.edt1.text = Msg as string
 		)
+		
 		on FixRoll moved pos do
 		(
 			setIniSetting DialogIniFile "FixRoll" "Position" (pos as string)
 		)
 	)
 	DialogPos = execute (getIniSetting DialogIniFile "FixRoll" "Position")
-	if DialogPos == OK do DialogPos = [124,80]
-	CreateDialog FixRoll 124 80 DialogPos.x DialogPos.y style:#(#style_titlebar, #style_toolwindow, #style_sysmenu)
+	if DialogPos == OK do DialogPos = [124,110]
+	CreateDialog FixRoll 124 110 DialogPos.x DialogPos.y style:#(#style_titlebar, #style_toolwindow, #style_sysmenu)
 
-	fn Fix_one o =
+	fn FixAll o =
 	(
 		o.pivot = o.center
+		ResetTransform o
+		ResetScale o
+		ResetXForm o			
+		convertToPoly(o)
+	)
+	
+	fn FixAllBut o =
+	(
 		ResetTransform o
 		ResetScale o
 		ResetXForm o			
