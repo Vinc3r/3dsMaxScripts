@@ -13,7 +13,7 @@ Usually, you just have to :
 Copy coordinates from an object to an other.
 
 ### [geometryFix](https://raw.githubusercontent.com/Vinc3r/3dsMaxScripts/master/geometryFix.ms)
-Reset pivot, transforms, scale and xform of editpoly.
+Reset pivot, transforms, scale and xform of editpoly. **Save your file before using it!**, if a mesh is broken, it will explode and no CTRL Z is possible.
 
 ### [lockUnlock](https://raw.githubusercontent.com/Vinc3r/3dsMaxScripts/master/lockUnlock.ms)
 When you want lock an object like a camera, you must check each box on the hierarchy > link info Same thing when you want to unlock. This script automatically do it for all entries.
