@@ -23,7 +23,7 @@ When you want lock an object like a camera, you must check each box on the hiera
 One-click-apply a box mapping with the same value on lenght, width and height.
 
 ### [selectDependencies](https://raw.githubusercontent.com/Vinc3r/3dsMaxScripts/master/selectDependencies.ms)
-Easy select reference objects.
+Easy select reference objects or objects sharing same modifiers.
 
 ### [weld](https://raw.githubusercontent.com/Vinc3r/3dsMaxScripts/master/weld.ms)
 One-click weld at a default value of 0,001.
